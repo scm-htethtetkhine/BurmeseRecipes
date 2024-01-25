@@ -1,0 +1,36 @@
+<div class="container detail-page">
+  <h2>Burmese Recipes</h2>
+  <!-- HTML !-->
+  <button class="back-btn" routerLink="/"><mat-icon>arrow_back_ios</mat-icon>Back</button>
+  <div class="recipesdetail-list">
+    @for (recipes of recipesData; track recipes.Guid) {
+      @for (usertype of typeData; track usertype.UserId) {
+        @if (recipes.Guid == recipe) {
+          @if (recipes.UserType == usertype.UserCode ) {
+            <div class="imgdetail">
+              <img src="../../../assets/images/{{recipes.Name}}.jpg" onerror="this.onerror=null;this.src='../../../assets/images/default.png';" />
+            </div>
+            <div class="recipe-gp">
+              <div class="list-item">
+                <h1><mat-icon>fast_forward</mat-icon>Menu Type<mat-icon>fast_rewind</mat-icon></h1>
+                <p>{{usertype.UserMMType}} OR {{usertype.UserEngType}}</p>
+              </div>
+              <div class="list-item">
+                <h1><mat-icon>fast_forward</mat-icon>Menu Name<mat-icon>fast_rewind</mat-icon></h1>
+                <p>{{recipes.Name}}</p>
+              </div>
+              <div class="list-item">
+                <h1><mat-icon>fast_forward</mat-icon>Ingredients<mat-icon>fast_rewind</mat-icon></h1>
+                <p>{{recipes.Ingredients}}</p>
+              </div>
+              <div class="list-item">
+                <h1><mat-icon>fast_forward</mat-icon>How to cook?<mat-icon>fast_rewind</mat-icon></h1>
+                <p>{{recipes.CookingInstructions}}</p>
+              </div>              
+            </div>
+          }
+        }
+      }
+    } 
+  </div>
+</div>

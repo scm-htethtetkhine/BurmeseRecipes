@@ -1,0 +1,15 @@
+<div class="container">
+<div class="recipes-list">
+  @for (recipes of recipesData; track recipes.Guid) {
+    <div (click)="route(recipes.Guid)" class="recipes-item">
+      <p>{{recipes.Name}}</p>
+    <div class="img-recipe">
+      <img src="../../../assets/images/{{recipes.Name}}.jpg" onerror="this.onerror=null;this.src='../../../assets/images/default.png';" />
+    </div>
+  </div>
+  } @empty {
+    <span>Empty list of recipes</span>
+  }  
+</div>
+</div>
+<router-outlet></router-outlet>

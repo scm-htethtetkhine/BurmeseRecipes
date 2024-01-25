@@ -1,0 +1,237 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+  font-family: 'Rocher';
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Noto+Serif+Myanmar&display=swap');
+
+.container {
+  padding: 40px;
+  background: url("./assets/images/common/recipe_bg.jpeg")no-repeat center center fixed;
+  background-size: cover;
+  min-height: 90vh;
+}
+
+.container.detail-page {
+  background: #ffe4a3;
+}
+
+h2 {
+  --b: 3px;
+  --s: .15em;
+  --c: #FF792E;
+  padding: 10px;
+  color: var(--c);
+  --_p: var(--s);
+  background: conic-gradient(from 90deg at var(--b) var(--b),#FCF951FF 90deg,var(--c) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.2em;
+  cursor: pointer;
+  width: 20%;
+  font-size: 30px;
+  font-family: Rocher!important;
+  text-align: center;  
+}
+
+h2:hover {
+  --_p: 0px;
+  outline-color: var(--c);
+  outline-offset: 0.05em;
+}
+
+.recipes-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-column-gap: 43px;
+  grid-row-gap: 44px;
+  padding-top: 18px;
+}
+
+.recipes-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFACD;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 2px 4px 34px 0px rgba(113,188,120,0.77);
+}
+
+.recipes-item:hover {
+  background: #e1d144;
+}
+
+.recipes-item p {
+  color: #0066b2;
+  padding: 50px 23px;
+  font-size: 20px;
+  font-weight: 700;
+  width: 56%;
+  font-family: 'Noto Serif Myanmar', serif;
+  margin-bottom: 0;
+  line-height: 1.8;
+}
+
+.recipes-item p:hover {
+  color: #7fbce9;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+}
+
+img {
+  max-width: 100%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.img-recipe {
+  margin-right: -31px;
+  height: 120px;
+  border-radius: 100%;
+  border: 5px solid #69e79f;
+}
+
+.pagination {
+  padding: 2px 0;
+  border-radius: 12px;
+  font-size: 17px;
+  color: #FFFC19;
+  width: 38%;
+  margin: 0 auto;
+}
+
+.ngx-pagination {
+  background: #b7effb;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgb(72 148 213) 3px 3px 6px 0px inset, rgb(243 238 238 / 50%) -3px -3px 6px;
+}
+
+.ngx-pagination .current {
+  background: #ffb6c1!important;
+  border-radius: 30px;
+}
+
+.ngx-pagination a:hover {
+  background: #ffb6c1!important;
+  opacity: 0.8;
+  border-radius: 30px;
+}
+
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before,
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after { 
+  content: '' !important; 
+}
+
+.detail-page img {
+  width: 300px;
+  height: 300px;
+  border-radius: 0;
+  border: 8px solid #808000;
+}
+
+.recipesdetail-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 35px;
+}
+
+.detail-page .imgdetail {
+  width: 100%;
+  text-align: center;
+}
+
+.detail-page h2 {
+  margin: 0 auto 30px!important;
+}
+
+.recipe-gp {
+  color: #944300;
+}
+
+.detail-page h1 {
+  font-size: 30px;
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.detail-page .list-item {
+  margin-bottom: 25px;
+}
+
+.detail-page .list-item p {
+  margin-bottom: 0;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.back-btn {
+  background: #FF792E;
+  border: 1px solid #FF792E;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.back-btn:hover,
+.back-btn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.back-btn:active {
+  opacity: .5;
+}
+
+/* Mobile */
+
+@media (max-width: 999px) {
+  .container {
+    padding: 40px 22px;
+  }
+  h2 {
+    width: 70%;
+  }
+  .recipes-list {
+    width: 93%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pagination {
+    width: 100%;
+    font-size: 14px;
+  }
+  .recipesdetail-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+  
+  .recipes-item p {
+    font-size: 16px;
+  }
+}

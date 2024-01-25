@@ -1,0 +1,18 @@
+<div class="container"> 
+  <h2>Burmese Recipes</h2>
+  <div class="pagination">
+    <pagination-controls previousLabel="&lsaquo;" nextLabel="&rsaquo;" (pageChange)="currentPageNumber=$event"></pagination-controls>
+  </div> 
+  <div class="recipes-list">
+    @for (recipes of recipesData | paginate:{itemsPerPage: pageSize, currentPage:currentPageNumber};  track recipes.Guid ) {
+      <div class="recipes-item"  routerLink="/detailrecipe/{{recipes.Guid}}" >
+          <p>{{recipes.Name}}</p>
+          <div class="img-recipe">
+            <img src="../../../assets/images/{{recipes.Name}}.jpg" onerror="this.onerror=null;this.src='../../../assets/images/default.png';" />
+          </div>
+        </div>
+      } @empty {
+        <span>Empty list of recipes</span>
+      }  
+    </div>
+  </div>

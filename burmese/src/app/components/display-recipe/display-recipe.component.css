@@ -1,0 +1,40 @@
+.container {
+    margin: 0 auto;
+    padding: 40px;
+    width: 1200px;
+    background: #90caf9;
+}
+
+.recipes-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.recipes-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: linear-gradient(33deg, #f78fad, #fdeb82); */
+    background: #ba68c8;
+    border-radius: 15px;
+    padding: 10px 0;
+}
+
+.recipes-item p {
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.img-recipe {
+    margin-right: -31px;
+    height: 120px;
+}
